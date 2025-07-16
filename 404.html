@@ -1,16 +1,371 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>کسری صیدی - ارور</title>
-<body style="background-color: #1d2026;">
-      </div></header>
-    <section>
-      <div>
-        <h1 style="color: aliceblue;font-family: arial;text-align: center;" >این صفحه وجود ندارد!</h1>
-      <h2 style="color: aliceblue;font-family: arial;text-align: center;" >به <a style="text-decoration: underline;color: #0e87f9;" href="https://kasraseydi.github.io/">صفحه اصلی</a> بازگردین</h2>
-      <p style="color: #2e323b;text-align: center;">ERR TYPE: 404_NOINFO</p>
-      </div>
-    </section> 
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - پیدا نشد</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: rgb(32, 36, 43);
+      --text-primary: rgb(65, 133, 244);
+      --bg-light: rgb(30, 33, 40);
+      --accent: rgb(14, 135, 249);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      direction: rtl;
+    }
+
+    h1 {
+      font-size: 8rem;
+      animation: glitch 1s infinite;
+      color: var(--text-primary);
+      margin-bottom: 50px;
+    }
+
+
+    .subtext {
+      font-size: 1.5rem;
+      color: var(--accent);
+      min-height: 2.5em;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    #refresh {
+      width: 33px;
+      height: 33px;
+      cursor: pointer;
+    }
+
+    .home-btn {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .home-btn:hover {
+      background-color: var(--accent);
+      color: var(--bg-dark);
+    }
+
+    .tip-container {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: row-reverse; /* refresh button left, tip box right */
+        align-items: center;
+        gap: 8px;
+        max-width: 360px;
+    }
+
+
+    .tip-box {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: var(--accent);
+      background-color: var(--bg-light);
+      padding: 15px 20px;
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      min-height: 3.2em;
+      line-height: 1.3;
+      user-select: none;
+      word-wrap: break-word;
+      direction: rtl; /* RTL text */
+    }
+
+    /* The span inside tip-box to hold text and animate opacity */
+    #tipText {
+      display: inline-block;
+      transition: opacity 0.4s ease;
+      opacity: 1;
+    }
+
+    .tip-refresh {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--accent);
+      user-select: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 2px solid var(--accent);
+      background-color: transparent;
+      border: 0;
+      transform: scale(1);
+      transition: 0.2s ease-in-out;
+    }
+
+    .tip-refresh:hover {
+      text-shadow: 0px 0px 15px #0c79df;
+      transform: scale(1.2);
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 blue; }
+      20% { text-shadow: -2px 0 red, 2px 0 blue; }
+      40% { text-shadow: 2px 2px red, -2px -2px blue; }
+      60% { text-shadow: -2px -2px red, 2px 2px blue; }
+      80% { text-shadow: 0 0 red, 0 0 blue; }
+      100% { text-shadow: 2px 0 red, -2px 0 blue; }
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 5rem;
+        margin-bottom: 30px;
+      }
+
+      .subtext {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+        padding: 0 5px;
+      }
+
+      .home-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        margin-bottom: 8px;
+      }
+
+      .tip-container {
+        position: static;
+        max-width: 100%;
+        width: auto;
+        margin-top: 20px;
+        padding: 0 10px;
+        justify-content: flex-start;
+        flex-direction: row-reverse; /* keep refresh left, tip right */
+      }
+
+      .tip-box {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+        min-height: auto;
+        border-left-width: 4px;
+        border-radius: 5px;
+        direction: rtl;
+      }
+
+      .tip-refresh {
+        font-size: 1.3rem;
+        padding: 4px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>404</h1>
+  <p class="subtext" id="subtext"></p>
+  <a class="home-btn" href="/">بازگشت به خانه</a>
+
+<div class="tip-container">
+  <button aria-label="نکته بعدی" title="نکته بعدی" class="tip-refresh" id="refreshTipBtn"><div id="refresh"></div></button>
+  <div class="tip-box" id="tipBox"><span id="tipText">در حال بارگذاری نکته...</span></div>
+</div>
+
+  
+  
+<script>
+  const animation = lottie.loadAnimation({
+    container: document.getElementById('refresh'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: 'https://kasraseydi.github.io/lottie/rfrshtips.json'
+  });
+
+  document.getElementById('refresh').addEventListener('click', () => {
+    animation.stop();
+    animation.play();
+  });
+</script>
+
+
+  <script>
+    const tips = [
+      "نکته: همیشه نسخه پشتیبان بگیرید. مخصوصاً از جوک‌هایتان.",
+      "جوک JS: چرا برنامه‌نویس ورشکست شد؟ چون همه کشش را مصرف کرد.",
+      "نکته 404: گاهی بهترین مسیر خانه است.",
+      "حقیقت جالب: این صفحه از بیشتر صفحات واقعی باحال‌تر است.",
+      "نکته حرفه‌ای: سمی‌کالن‌ها اختیاری‌اند. تا وقتی که نباشند.",
+      "404 = فایل پیدا نشد. مثل همان سمی‌کالن گمشده.",
+      "اشکال‌زدایی: مثل کارآگاهی در فیلم جنایی که خودش قاتل است.",
+      "جوک JS: به کدم یک جوک گفتم. استثنا را نگرفت.",
+      "نکته: به اتم‌ها اعتماد نکنید. همه چیز را می‌سازند — درست مثل این آدرس.",
+      "راهنما: شاید صفحه پشت console.log پنهان شده باشد؟",
+      "خطای 404: کیک دروغ است.",
+      "جوک JS: undefined یک تابع نیست، ولی این صفحه هم پیدا نشد.",
+      "نصیحت 404: گمشده نیست، در حال کاوش است.",
+      "آیا صفحه را خاموش و روشن کرده‌اید؟",
+      "نکته: تنها چیز بی‌نهایت، console.log() در حلقه است.",
+      "جوک: چرا تابع async شکست خورد؟ چون منتظر destiny نشد.",
+      "یادآوری: قبل از ترک عصبانی، commit کن.",
+      "404 شناسایی شد: خطای نحوی در واقعیت.",
+      "حقیقت جالب: این یک void با تلاش زیاد است.",
+      "یادداشت توسعه‌دهنده 404: این اتفاق زمانی می‌افتد که مسیر را فراموش کنی.",
+      "404: صفحه‌ای که دنبال آن بودی نیست، ولی تلاش خوبی بود.",
+      "سرور می‌گوید: نه، امروز نه.",
+      "گمشده در بیابان وب. کمک ارسال کنید.",
+      "خطا: صفحه موقتاً توسط یک سیاه‌چاله بلعیده شده است.",
+      "404: کسی اینترنت را از برق کشیده. دوباره.",
+      "چرا برنامه‌نویسان طبیعت را دوست ندارند؟ خیلی حشره دارد.",
+      "هشدار: صفحه‌ای که دنبال آن هستید پشت لایه‌های CSS پنهان است.",
+      "مختصات GPS این صفحه جایی در فضای سایبری است.",
+      "آرام باش و صفحه را تازه کن.",
+      "404 - گم نشده‌ایم، فقط در ابعاد موازی کاوش می‌کنیم.",
+      "صفحه گم شده اما اشتیاق شما سالم است!",
+      "آیا کد مخفی کونامی را اینجا امتحان کرده‌اید؟",
+      "404: گریم‌لاین‌های اینترنت دوباره دست به کار شدند."
+    ];
+
+    const subtexts = [
+      "این صفحه به خلأ رانده شده است...",
+      "اوه... شما خارج از نقشه هستید.",
+      "به نظر می‌رسد صفحه برای قهوه رفته است.",
+      "شما به طرف تاریک URL رسیده‌اید.",
+      "واقعیت 404 پیدا نشد. سعی کنید وجود را بارگذاری مجدد کنید.",
+      "چیزی برای دیدن نیست... فقط چند بیت گمشده.",
+      "صفحه‌ای که دنبال آن هستید در تعطیلات است.",
+      "به نظر می‌رسد کسی اینترنت را پاک کرده است.",
+      "مشکل از شما نیست، از صفحه است.",
+      "این لینک آنقدر خراب است که حالا یک NFT است.",
+      "اگر این صفحه یک گربه بود، Schrödinger بود.",
+      "خب، این کمی خجالت‌آور است.",
+      "این صفحه‌ای نیست که دنبال آن بودید. بروید.",
+      "اوه! این صفحه روی یک سمی‌کالن گیر کرده.",
+      "تلاش، دوباره تلاش، شکست؟ این صفحه هر سه را انجام داد.",
+      "این صفحه به 127.0.0.1 رفته است.",
+      "مثل جوراب‌هایتان در خشک‌کن — برای همیشه گم شده.",
+      "درخواست واقعیت... زمان پایان یافت.",
+      "به خلأ لینک‌های خراب خوش آمدید.",
+      "404: همه امیدها اینجا رها شده است.",
+      "برای قهوه رفت و برنگشت.",
+      "این صفحه حتی اینجا نمی‌رود!",
+      "آدرس پیدا نشد. شاید پشت فایروال پنهان شده باشد؟",
+      "قرار بود این یک صفحه باحال باشد. اوپس.",
+      "روتر چشمک زد و این صفحه ناپدید شد.",
+      "404: خوش آمدید به بعد خطا.",
+      "صفحه‌ای گمشده در ابرفضا. هیچ سیگنالی نیست.",
+      "ارتباط قطع شد. بسته‌های بیشتری ارسال کنید.",
+      "404: واقعیت قطع شده.",
+      "خطای 404: نیرو با این صفحه نیست.",
+      "اوه! به نظر می‌رسد ماتریس گلیچ کرده.",
+      "این صفحه از کرم‌چاله عبور کرده است.",
+      "سرور چرت می‌زند. لطفاً صبر کنید.",
+      "404: باد تومبل‌وید دیجیتال.",
+      "این صفحه رفته برای قهوه. زود برمی‌گردد.",
+      "404: گم شده در ترجمه.",
+      "همه آن‌هایی که سرگردانند گم نشده‌اند، به جز این صفحه.",
+      "این صفحه ترجیح می‌دهد ناشناس بماند."
+    ];
+
+    const chars = "!@#$%^&*()_+{}[]<>?,./|\\-=~۱۲۳۴۵۶۷۸۹۰آبپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی";
+    const subtextEl = document.getElementById("subtext");
+    const tipTextEl = document.getElementById("tipText");
+    const refreshBtn = document.getElementById("refreshTipBtn");
+
+    let lastTip = -1;
+    let lastSub = -1;
+    let scrambleTimer = null;
+    let tipFadeTimeout = null;
+    let tipInterval = null;
+
+    function getNewRandom(arr, lastIndex) {
+      let index;
+      do {
+        index = Math.floor(Math.random() * arr.length);
+      } while (index === lastIndex && arr.length > 1);
+      return index;
+    }
+
+    function scrambleText(finalText) {
+      clearInterval(scrambleTimer);
+      let revealIndex = 0;
+
+      scrambleTimer = setInterval(() => {
+        let result = "";
+        for (let i = 0; i < finalText.length; i++) {
+          result += i < revealIndex ? finalText[i] : chars[Math.floor(Math.random() * chars.length)];
+        }
+        subtextEl.textContent = result;
+        revealIndex++;
+        if (revealIndex > finalText.length) {
+          clearInterval(scrambleTimer);
+        }
+      }, 20.5);
+    }
+
+    function showNewSubtext() {
+      lastSub = getNewRandom(subtexts, lastSub);
+      scrambleText(subtexts[lastSub]);
+    }
+
+    function fadeTipTo(text) {
+      if (tipFadeTimeout) clearTimeout(tipFadeTimeout);
+
+      tipTextEl.style.opacity = 0;
+
+      tipFadeTimeout = setTimeout(() => {
+        tipTextEl.textContent = text;
+        tipTextEl.style.opacity = 1;
+      }, 400);
+    }
+
+    function showNewTip() {
+      lastTip = getNewRandom(tips, lastTip);
+      fadeTipTo(tips[lastTip]);
+    }
+
+    function resetTipInterval() {
+      clearInterval(tipInterval);
+      tipInterval = setInterval(showNewTip, 30000);
+    }
+
+    refreshBtn.addEventListener("click", () => {
+      showNewTip();
+      resetTipInterval();
+    });
+
+    // Initialize on load
+    showNewSubtext();
+    setTimeout(() => {
+    showNewTip();
+    tipInterval = setInterval(showNewTip, 30000);
+    }, 550); // 500ms delay — tweak as needed
+  </script>
 </body>
 </html>
